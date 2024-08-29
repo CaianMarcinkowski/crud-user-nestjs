@@ -1,12 +1,9 @@
 import { ApiProperty } from "@nestjs/swagger";
 
-export class CreateUserDto {
+export class LoginUserDto {
     @ApiProperty( {required: true, default: "caian@gmail.com"} )
     email: string;
 
-    @ApiProperty( {required: true, default: "Caian"} )
-    username: string;
-
     @ApiProperty( {required: true, default: "S3nh@"} )
     password: string;
-}
+  }
