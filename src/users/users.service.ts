@@ -59,7 +59,7 @@ export class UsersService {
   remove(id: number) {
     const userIndex = this.users.findIndex(user => user.id === id);
     if (userIndex === -1) {
-      throw new NotFoundException(`Usuario com o id ${id} não foi encontrado!`);
+      throw new NotFoundException(`Usuário com o id ${id} não foi encontrado!`);
     }
     this.users.splice(userIndex, 1);
     return { message: `Usuario com o id ${id} foi removido!` };
@@ -68,12 +68,12 @@ export class UsersService {
   async login(loginUserDto: LoginUserDto) {
     const user = this.users.find(user => user.email === loginUserDto.email);
     if (!user) {
-      throw new UnauthorizedException('Invalid credentials');
+      throw new UnauthorizedException('Credenciais invalidas.');
     }
 
     const isPasswordMatching = await bcrypt.compare(loginUserDto.password, user.password);
     if (!isPasswordMatching) {
-      throw new UnauthorizedException('Invalid credentials');
+      throw new UnauthorizedException('Credenciais invalidas.');
     }
 
     const payload = { email: user.email, sub: user.id };
