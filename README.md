@@ -30,14 +30,14 @@ Este projeto é uma API desenvolvida com NestJS, usando JWT para autenticação,
 
 - Crie um arquivo .env na raiz do projeto com o seguinte conteúdo:
 
-  NODE_ENV=DEV
+  NODE_ENV=DEV <br>
   JWT_SECRET=G#2&5!bV9wZ@xP8\*r6$R1#jT
 
 # Ambiente de Produção
 
 - Crie um arquivo .env.prod na raiz do projeto com o conteúdo apropriado para o ambiente de produção:
 
-  NODE_ENV=PROD
+  NODE_ENV=PROD <br>
   JWT_SECRET=G#2&5!bV9wZ@xP8\*r6$R1#jT
 
 Nota: Ambos os arquivos .env e .env.prod estão listados no .gitignore e não devem ser incluídos no repositório.
