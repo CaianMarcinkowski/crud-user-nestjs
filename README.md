@@ -1,85 +1,111 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
+# Projeto NestJS com JWT e Swagger
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+Este projeto é uma API desenvolvida com NestJS, usando JWT para autenticação, Swagger para documentação da API e Docker para containerização. A aplicação também utiliza bcrypt para hashing de senhas e armazena informações em um array simples para fins de demonstração.
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+## Tecnologias Utilizadas
 
-## Description
+- **NestJS**: Framework para construir aplicações Node.js escaláveis.
+- **Swagger**: Para documentação e testes interativos da API.
+- **JWT**: Para autenticação baseada em tokens.
+- **bcrypt**: Para hashing de senhas.
+- **Docker**: Para containerização da aplicação.
+- **nodemon**: Para reinicialização automática durante o desenvolvimento.
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## Configuração
 
-## Project setup
+### Ambiente de Desenvolvimento
 
-```bash
-$ npm install
-```
+## 1. Primeiro, clone o repositório para sua máquina local usando o Git:
 
-## Compile and run the project
+- git clone https://github.com/CaianMarcinkowski/crud-user-nestjs
+- cd seu-repositorio
 
-```bash
-# development
-$ npm run start
+## 2. Instale as dependências do projeto usando npm (ou yarn, se preferir):
 
-# watch mode
-$ npm run start:dev
+- npm install
 
-# production mode
-$ npm run start:prod
-```
+## 3. Crie os arquivos de configuração para os ambientes de desenvolvimento e produção:
 
-## Run tests
+# Ambiente de Desenvolvimento
 
-```bash
-# unit tests
-$ npm run test
+- Crie um arquivo .env na raiz do projeto com o seguinte conteúdo:
 
-# e2e tests
-$ npm run test:e2e
+NODE_ENV=DEV
+JWT_SECRET=G#2&5!bV9wZ@xP8\*r6$R1#jT
 
-# test coverage
-$ npm run test:cov
-```
+# Ambiente de Produção
 
-## Resources
+- Crie um arquivo .env.prod na raiz do projeto com o conteúdo apropriado para o ambiente de produção:
 
-Check out a few resources that may come in handy when working with NestJS:
+NODE_ENV=PROD
+JWT_SECRET=G#2&5!bV9wZ@xP8\*r6$R1#jT
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+Nota: Ambos os arquivos .env e .env.prod estão listados no .gitignore e não devem ser incluídos no repositório.
 
-## Support
+## 4. Rodar Localmente
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+Para iniciar a aplicação em modo de desenvolvimento, use:
 
-## Stay in touch
+- npm run start:dev
 
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+A aplicação estará disponível em http://localhost:3000. Você pode acessar a documentação da API em http://localhost:3000/docs.
 
-## License
+Use o Postman ou Insominia para testar.
 
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+## 5. Subir para o Docker
+
+### 5.1. Criar Imagem Docker
+
+Você pode construir a imagem Docker para sua aplicação de duas maneiras:
+
+**Opção 1: Usando o Terminal**
+
+Construa a imagem Docker para sua aplicação com o seguinte comando:
+
+- docker build -t crud-user .
+
+**Opção 2: Usando o Visual Studio Code**
+
+- Se você estiver usando o Visual Studio Code, você pode facilitar o processo usando a extensão do Docker:
+
+  Instale a Extensão do Docker: No VS Code, vá para a aba de extensões e procure por "Docker". Instale a extensão oficial do Docker.
+
+  Abrir o Dockerfile: Navegue até o arquivo Dockerfile no seu projeto.
+
+  Construir a Imagem: Clique com o botão direito do mouse no Dockerfile e selecione a opção "Build Image" para construir a imagem Docker diretamente pelo VS Code.
+
+### 5.2. Execute o contêiner com a imagem criada usando o comando:
+
+  - docker run -p 3000:3000 crud-user
+
+A aplicação estará disponível em http://localhost:3000 dentro do contêiner Docker.
+
+## Testar com Swagger
+
+### 6.1 A documentação da API está disponível em http://localhost:3000/docs.
+
+## Endpoints da API
+
+    POST /users
+        Cadastro de um novo usuário.
+        Requer um corpo JSON com os campos necessários (email, senha, nome).
+
+    POST /users/login
+        Autentica um usuário e retorna um token JWT.
+        Requer um corpo JSON com email e senha.
+
+    GET /users
+        Retorna uma lista de todos os usuários cadastrados.
+        Requer autenticação com token JWT.
+
+    GET /users/:id
+        Retorna um usuário específico pelo ID.
+        Requer autenticação com token JWT.
+
+    PATCH /users/:id
+        Atualiza um usuário existente pelo ID.
+        Requer autenticação com token JWT e um corpo JSON com os campos a serem atualizados (email, senha, nome).
+
+    DELETE /users/:id
+        Remove um usuário existente pelo ID.
+        Requer autenticação com token JWT.
